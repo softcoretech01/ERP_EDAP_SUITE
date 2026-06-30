@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Upload, FileText, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-import { useAuthStore } from '../store/useAuthStore';
 import api from '../api/axios';
 
 export function Uploads() {
@@ -9,7 +8,6 @@ export function Uploads() {
   const [uploadStatus, setUploadStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
   const [documents, setDocuments] = useState<string[]>([]);
-  const token = useAuthStore(state => state.token);
 
   const fetchDocuments = async () => {
     try {

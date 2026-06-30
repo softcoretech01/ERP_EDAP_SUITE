@@ -3,22 +3,10 @@ import api from '../api/axios';
 import { Plus, Server, Database, User, Shield, Activity, RefreshCw, Trash2 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 
-interface Connection {
-  id: number;
-  name: string;
-  host: string;
-  port: number;
-  user: string;
-  db_name: string;
-  db_type: string;
-  is_active: boolean;
-  connection_status: string;
-  last_indexed_at?: string;
-  error_message?: string;
-}
+
 
 export const Connections: React.FC = () => {
-  const { activeConnection, aiMode, setAiMode, connections, fetchConnections, isFetchingConnections } = useAppStore();
+  const { aiMode, setAiMode, connections, fetchConnections, isFetchingConnections } = useAppStore();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', host: '', port: 3306, user: '', password: '', db_name: '' });

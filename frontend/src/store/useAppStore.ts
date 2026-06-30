@@ -4,6 +4,15 @@ import api from '../api/axios';
 export interface Connection {
   id: number;
   name: string;
+  host: string;
+  port: number;
+  user: string;
+  db_name: string;
+  db_type: string;
+  is_active: boolean;
+  connection_status: string;
+  last_indexed_at?: string;
+  error_message?: string;
 }
 
 interface AppState {

@@ -88,7 +88,7 @@ export const ChartRenderer: React.FC<ChartProps> = ({ type, data }) => {
               cursor={{ fill: '#f4f4f4' }}
             />
             <Legend wrapperStyle={{ paddingTop: '20px' }} />
-            {seriesNames.map((name: string, i: number) => (
+            {seriesNames.map((name: string, _i: number) => (
               <Bar key={name} dataKey={name} fill={`url(#colorBar)`} radius={[6, 6, 0, 0]} barSize={40} />
             ))}
           </BarChart>
@@ -107,7 +107,7 @@ export const ChartRenderer: React.FC<ChartProps> = ({ type, data }) => {
               contentStyle={{ backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #e5e5e5', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} 
             />
             <Legend wrapperStyle={{ paddingTop: '20px' }} />
-            {seriesNames.map((name: string, i: number) => (
+            {seriesNames.map((name: string, _i: number) => (
               <Line key={name} type="monotone" dataKey={name} stroke="#3b82f6" strokeWidth={3} dot={{ r: 4, fill: '#3b82f6', strokeWidth: 2, stroke: '#fff' }} activeDot={{ r: 6 }} />
             ))}
           </LineChart>

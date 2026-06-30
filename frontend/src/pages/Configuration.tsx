@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Database, Save, Plus, Trash2, ArrowLeft } from 'lucide-react';
 import api from '../api/axios';
 import { useAppStore } from '../store/useAppStore';
@@ -27,7 +27,7 @@ export const Configuration = () => {
   }, [selectedModule, activeConnection?.id]);
 
   const fetchData = async () => {
-    if (!activeConnection) return;
+    if (!activeConnection || !selectedModule) return;
     try {
       // Fetch tables only if not already fetched for this connection
       if (tablesFetchedForConn !== activeConnection.id) {
@@ -182,7 +182,7 @@ export const Configuration = () => {
               </tr>
             </thead>
             <tbody>
-              {selectedTables.map((row, index) => (
+              {selectedTables.map((row, _index) => (
                 <tr key={row.id} className="border-b border-[#e5e5e5] last:border-b-0">
                   <td className="p-3">
                     <input
