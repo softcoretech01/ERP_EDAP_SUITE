@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-900: #1e3a8a;
+  
+  --color-dark-900: #0f172a;
+  --color-dark-800: #1e293b;
+  --color-dark-700: #334155;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-slate-200 antialiased m-0 font-sans;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-dark-800/70 backdrop-blur-md border border-slate-700;
+  }
+}
